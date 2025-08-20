@@ -1,0 +1,6 @@
+cd ~/Documents/C0$1
+echo navigated to:
+pwd
+ls
+echo ---- Welcome Henri, happy coding :\) ----
+code .

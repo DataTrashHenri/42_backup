@@ -1,0 +1,4 @@
+cd $PWD
+cc $1.c -Wall -Wextra -Werror
+./a.out -R checkForbiddenHeaders
+

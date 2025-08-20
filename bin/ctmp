@@ -1,0 +1,2 @@
+rm ./objects/*.o
+rm ./bin/*.bin

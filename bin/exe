@@ -1,0 +1,2 @@
+nasm -f elf64 -Ox ./asm_files/$1.asm -o ./objects/$1.o
+ld ./objects/$1.o -o ./programms/$1
