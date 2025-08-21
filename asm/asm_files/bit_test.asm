@@ -9,7 +9,7 @@ section .data
 section .text
 	global _start
 
-%macro print_bits 1 ; qbyte, working
+%macro print_bits 1 ; qbyte
 
 	mov [output], %1
 
@@ -52,7 +52,7 @@ _start:
 	xor rcx,rcx
 	xor rdx,rdx
 	
-	mov r9, 0
+	mov r9, 190
 	set_in_array r9
 
 	xor rax,rax

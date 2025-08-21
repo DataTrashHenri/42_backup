@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdint.h>
 
-#define BASE_PATH "/home/hrock/Documents/asm/bin/"
+#define BASE_PATH "/home/hrock/Documents/42_backup/asm/bin/"
 
 int main(int argc, char *argv[])
 {
@@ -16,18 +16,19 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    uint8_t buffer[8];   // read 8 bytes at a time
+    uint8_t buffer[8];
     unsigned long block_index = 0;
     size_t bytes_read;
 
     printf("<---------anything--------->\n");
     while ((bytes_read = fread(buffer, 1, 8, file)) > 0) {
-        printf("Block %lu:\n", block_index);
+        printf("BLOCK %lu ------ \n", block_index);
 
-        // Go over each byte
+        // every bit
         for (size_t b = 0; b < bytes_read; b++) {
-            // Go over each bit (MSB first)
-            for (int bit = 7; bit >= 0; bit--) {
+			//MLB
+			printf("Byte %li\n", b + 8*block_index);
+            for (int bit = 0; bit <= 7; bit++) {
                 int value = (buffer[b] >> bit) & 1;
                 int bit_index = (b * 8) + (7 - bit); // 0..63 inside the block
                 printf("%lu/%2d -> %d\n", block_index*64 + bit_index, bit_index, value);
